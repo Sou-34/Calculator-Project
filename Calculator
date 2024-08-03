@@ -1,0 +1,106 @@
+//html Code
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <table class="calculator">
+        <tr>
+            <td colspan="2"><h4><u>Calculator</u></h4></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="number" name="" id="fno" placeholder="Enter 1st Number"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="number" name="" id="sno" placeholder="Enter 2nd Number"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <select name="" id="option">
+                    <option value="">Select Option</option>
+                    <option value="1">Add</option>
+                    <option value="2">Subtract</option>
+                    <option value="3">Multiply</option>
+                    <option value="4">Divide</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><button onclick="calculate()">Calculate</button></td>
+           <td><form action="" method=""><button>clear</button></form></td>
+        </tr>
+
+        <tr>
+            <td>Result:</td>
+            <td id="result"></td>
+        </tr>
+    </table>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
+
+//CSS code
+body{
+  background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+}
+.calculator h4{
+  font-size: 15px;
+  text-align: center;
+}
+.calculator{
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 10%;
+  margin-top: 52%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 5px 5px black;
+}
+
+
+//JAVASCRIPT CODE
+
+
+function calculate()
+{
+  var fno=document.getElementById('fno');
+  var sno=document.getElementById('sno');
+  var option=document.getElementById('option');
+  var result=document.getElementById('result');
+  var a=fno.value;
+  var b=sno.value;
+  var choice=option.value;
+  if(choice=="1")
+  {
+    var s=parseInt(a) + parseInt(b);
+    result.innerHTML=s;
+  }
+  else if(choice=="2")
+  {
+    var s=parseInt(a) - parseInt(b);
+    result.innerHTML=s;
+  }
+  else if (choice=="3") {
+    
+    var s=parseInt(a) * parseInt(b);
+    result.innerHTML=s;
+  }
+  else if(choice=="4")
+  {
+    var s=parseFloat(a) / parseInt(b);
+    result.innerHTML=s;
+  }
+  else {
+    alert("select choice")
+  }
+}
